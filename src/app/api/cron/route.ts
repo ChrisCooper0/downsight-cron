@@ -3,7 +3,7 @@ import runPuppeteer from "@/app/utils/puppeteer";
 export const dynamic = "force-dynamic"; // static by default, unless reading the request
 export const runtime = "nodejs";
 
-export async function GET(_request: Request) {
+export async function GET(request: Request) {
   const result = await runPuppeteer(process.env.WEBSITE_TO_CHECK ?? "");
 
   if (result === "Fail") console.log("Failed website check");
